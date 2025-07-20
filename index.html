@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Basheeruddin - Portfolio</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Mohammed Basheeruddin's portfolio showcasing expertise in Front-end Interface Design, UI Crafting, Computer Science, AI/ML, and Web Development.">
+    <meta name="keywords" content="Mohammed Basheeruddin, front-end designer, UI crafting specialist, computer science, Matrusri Engineering College, HTML, CSS, JavaScript, UI/UX, AI, ML, Web Development, Game Development, Public Speaking">
+    <meta name="author" content="Mohammed Basheeruddin">
+
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/your-repo/">
+    <meta property="og:title" content="Mohammed Basheeruddin - Portfolio">
+    <meta property="og:description" content="Mohammed Basheeruddin's portfolio showcasing expertise in Front-end Interface Design, UI Crafting, Computer Science, AI/ML, and Web Development.">
+    <!-- Updated og:image to a generic placeholder for robustness -->
+    <meta property="og:image" content="https://placehold.co/1200x630/4285F4/FFFFFF?text=Mohammed+Basheeruddin+Portfolio">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter for body, Playfair Display for headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Custom CSS Variables for consistent theming */
+        :root {
+            --background-light: #f0f2f5; /* Light gray, almost white */
+            --text-color: #2c3e50; /* Dark blue-gray for main text */
+            --heading-color: #1a202c; /* Even darker for headings */
+            --card-bg: #ffffff; /* Pure white cards */
+            --border-color: #d1d5db; /* Light gray border */
+            --primary-color: #4285F4; /* A distinct, professional blue (Google blue) */
+            --primary-hover: #357ae8; /* Slightly darker blue for hover */
+            --gradient-start: #4285F4; /* Start with primary blue */
+            --gradient-end: #34a853; /* End with a subtle green (like Google's green) */
+            --glass-bg: rgba(255, 255, 255, 0.8); /* Slightly more opaque white glass */
+            --glass-border: rgba(209, 213, 219, 0.5); /* Lighter border for glass */
+        }
+
+        /* Base body styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme changes */
+        }
+
+        /* Heading font styles */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--heading-color); /* Headings will be darker for emphasis */
+        }
+
+        /* Container for consistent content width */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* Section title styling */
+        .section-title {
+            font-size: 2.5rem; /* 40px */
+            font-weight: 800; /* Extra Bold */
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Gradient text effect */
+        .text-gradient {
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Primary button styling */
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem; /* rounded-lg */
+            font-weight: 600; /* Semibold */
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease; /* Added box-shadow transition */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px -2px rgba(66, 133, 244, 0.3), 0 4px 6px -2px rgba(66, 133, 244, 0.1); /* Blue tinted shadow */
+        }
+
+        /* Card styling */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); /* Lighter shadow for light theme */
+            padding: 1.5rem;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(66, 133, 244, 0.2), 0 4px 6px -2px rgba(66, 133, 244, 0.1); /* Blue tinted shadow on hover */
+        }
+
+        /* Glassmorphism Effect for header */
+        .glass-card {
+            background-color: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border); /* Subtle bottom border */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Slightly more pronounced shadow */
+        }
+
+        /* Navbar link styling for "classy and Canva looking" */
+        .navbar-link {
+            position: relative;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .navbar-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px; /* Position below text */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            transition: width 0.3s ease-in-out;
+        }
+
+        .navbar-link:hover::after {
+            width: calc(100% - 1.5rem); /* Adjust width to match padding */
+        }
+
+        /* Certification Card Specific Styles */
+        .certification-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .certification-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Hero Section Background Animation */
+        .hero-animated-overlay {
+            background: linear-gradient(45deg, rgba(66, 133, 244, 0.3), rgba(52, 168, 83, 0.3), rgba(251, 188, 5, 0.3), rgba(234, 67, 53, 0.3));
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* New styles for circular image and border in hero */
+        .hero-image-container {
+            width: 180px; /* Adjust size as needed */
+            height: 180px; /* Adjust size as needed */
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid rgba(255, 255, 255, 0.7); /* White border for the frame */
+            box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.3), 0 0 20px rgba(0, 0, 0, 0.4); /* Outer glow/shadow */
+            margin-bottom: 1.5rem;
+            display: inline-block; /* To center it properly */
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Footer visibility fix */
+        footer {
+            position: relative; /* Ensure it's part of the normal flow or positioned relative */
+            z-index: 10; /* Give it a z-index to ensure it's above other content if overlapping */
+            background-color: var(--heading-color); /* To ensure it has a visible background */
+            color: white; /* Ensure text is visible */
+        }
+        /* Ensure main content doesn't overlap the footer due to negative margins or absolute positioning */
+        main {
+            position: relative;
+            z-index: 5; /* Lower than footer if there's any overlap potential */
+        }
+
+        /* Modal specific styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 100; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border-radius: 0.75rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm py-4 glass-card">
+        <nav class="container flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-gradient">Mohammed Basheeruddin</a>
+            <div class="space-x-6 hidden md:flex items-center">
+                <a href="#about" class="text-gray-700 hover:text-primary-color font-medium transition-colors duration-200 navbar-link">About</a>
+                <a href="#skills" class="text-gray-700 hover:text-primary-color font-medium transition-colors duration-200 navbar-link">Skills</a>
+                <a href="#projects" class="text-gray-700 hover:text-primary-color font-medium transition-colors duration-200 navbar-link">Projects</a>
+                <a href="#certifications" class="text-gray-700 hover:text-primary-color font-medium transition-colors duration-200 navbar-link">Certifications</a>
+                <a href="#blog" class="text-gray-700 hover:text-primary-color font-medium transition-colors duration-200 navbar-link">Blog</a>
+                <a href="#volunteering" class="text-gray-700 hover:text-primary-color font-medium transition-colors duration-200 navbar-link">Volunteering</a>
+                <a href="#contact-info" class="text-gray-700 hover:text-primary-color font-medium transition-colors duration-200 navbar-link">Contact</a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <div class="flex items-center md:hidden">
+                <button class="text-gray-700 hover:text-primary-color focus:outline-none" onclick="toggleMobileMenu()">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-50 flex flex-col items-center justify-center space-y-8 transition-colors duration-300">
+            <button class="absolute top-6 right-6 text-gray-700 hover:text-primary-color focus:outline-none" onclick="toggleMobileMenu()">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <a href="#about" class="text-4xl font-semibold text-gray-800 hover:text-primary-color transition-colors duration-200" onclick="toggleMobileMenu()">About</a>
+            <a href="#skills" class="text-4xl font-semibold text-gray-800 hover:text-primary-color transition-colors duration-200" onclick="toggleMobileMenu()">Skills</a>
+            <a href="#projects" class="text-4xl font-semibold text-gray-800 hover:text-primary-color transition-colors duration-200" onclick="toggleMobileMenu()">Projects</a>
+            <a href="#certifications" class="text-4xl font-semibold text-gray-800 hover:text-primary-color transition-colors duration-200" onclick="toggleMobileMenu()">Certifications</a>
+            <a href="#blog" class="text-4xl font-semibold text-gray-800 hover:text-primary-color transition-colors duration-200" onclick="toggleMobileMenu()">Blog</a>
+            <a href="#volunteering" class="text-4xl font-semibold text-gray-800 hover:text-primary-color transition-colors duration-200" onclick="toggleMobileMenu()">Volunteering</a>
+            <a href="#contact-info" class="text-4xl font-semibold text-gray-800 hover:text-primary-color transition-colors duration-200" onclick="toggleMobileMenu()">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Landing Page / Hero Section -->
+        <section id="hero" class="relative py-20 md:py-32 flex items-center justify-center min-h-screen overflow-hidden text-center bg-cover bg-center" style="background-image: url('https://source.unsplash.com/random/1920x1080/?technology,abstract,circuit');">
+            <!-- Background Overlay with Glassmorphism and Animation -->
+            <div class="absolute inset-0 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm -webkit-backdrop-filter -webkit-backdrop-blur-sm hero-animated-overlay"></div>
+
+            <div class="relative z-10 container text-white" data-aos="fade-up" data-aos-duration="1000">
+                <!-- User's Iconic Image with Luxurious Frame - REMOVED -->
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+                    Hi, I'm <span class="text-white">Mohammed Basheeruddin</span>!
+                </h1>
+                <p class="text-xl md:text-3xl font-light mb-6 min-h-[4rem]">Front-end Interface Designer & UI Crafting Specialist</p>
+                <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto opacity-90">
+                    I'm a passionate Front-end Interface Designer and UI Crafting Specialist, currently pursuing Computer Science at Matrusri Engineering College. I love building intuitive and aesthetically pleasing user interfaces and solving complex problems with elegant solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#contact-info" class="btn-primary flex items-center space-x-2">
+                        <i class="fas fa-handshake"></i>
+                        <span>Hire Me</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-16 md:py-24 bg-gray-50 transition-colors duration-300">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title text-gradient">About Me</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-lg leading-relaxed space-y-4">
+                        <p>Hi everyone, It's me Basheer. Currently pursuing Engineering in the field of Computer Science from Matrusri Engineering College. From a very young age, it's been my connection and innovation with technology which cemented my fascination towards it. This early spark quickly evolved into a deep passion for crafting intuitive and aesthetically pleasing user interfaces. I believe that well-designed front-end experiences are crucial for bridging the gap between complex technology and everyday users. My academic journey in Computer Science provides a strong foundation in core principles, while my hands-on experience allows me to specialize in bringing designs to life with clean, efficient code. I am constantly exploring new tools and techniques in UI/UX and front-end development, always striving to create impactful and memorable digital products.</p>
+                    </div>
+                    <!-- My Journey (Experience & Education) - New Format -->
+                    <div class="relative">
+                        <h3 class="text-2xl font-semibold text-heading-color mb-6 text-center">My Journey</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Experience: Creative Head -->
+                            <div class="card p-5" data-aos="fade-up" data-aos-delay="200">
+                                <h4 class="text-xl font-semibold text-heading-color">Creative Head</h4>
+                                <p class="text-primary-color text-sm">Big Oh | Apr 2025 - Present</p>
+                                <p class="text-sm mt-2 text-text-color">Leading creative initiatives and design strategies.</p>
+                            </div>
+                            <!-- Education: Matrusri Engineering College -->
+                            <div class="card p-5" data-aos="fade-up" data-aos-delay="400">
+                                <h4 class="text-xl font-semibold text-heading-color">Bachelors in Engineering, Computer Science</h4>
+                                <p class="text-primary-color text-sm">Matrusri Engineering College | Sep 2023 - Jun 2027</p>
+                                <p class="text-sm mt-2 text-text-color">Focus on Data Structures, Algorithms, and Web Technologies.</p>
+                            </div>
+                            <!-- Experience: Student Ambassador -->
+                            <div class="card p-5" data-aos="fade-up" data-aos-delay="600">
+                                <h4 class="text-xl font-semibold text-heading-color">Student Ambassador (Mecs) and Community Member</h4>
+                                <p class="text-primary-color text-sm">Student Tribe (formerly stuMagz) · Internship | Dec 2024 - Present</p>
+                                <p class="text-sm mt-1 text-text-color">Hyderabad, Telangana, India · Hybrid</p>
+                                <p class="text-sm mt-2 text-text-color">Engaging with student communities and promoting college events.</p>
+                            </div>
+                            <!-- Education: Narayana Junior College -->
+                            <div class="card p-5" data-aos="fade-up" data-aos-delay="800">
+                                <h4 class="text-xl font-semibold text-heading-color">Intermediate, MPC</h4>
+                                <p class="text-primary-color text-sm">Narayana Junior College - India | Apr 2021 - Mar 2023</p>
+                                <p class="text-sm mt-1 text-text-color">Grade: 96.5%</p>
+                                <p class="text-sm mt-2 text-text-color">Strong foundation in Mathematics, Physics, and Chemistry.</p>
+                            </div>
+                            <!-- Experience: Club Member -->
+                            <div class="card p-5" data-aos="fade-up" data-aos-delay="1000">
+                                <h4 class="text-xl font-semibold text-heading-color">Club Member</h4>
+                                <p class="text-primary-color text-sm">MECS Orators Club | Oct 2024 - Present</p>
+                                <p class="text-sm mt-2 text-text-color">Developing public speaking and communication skills.</p>
+                            </div>
+                            <!-- Education: Little Flower School -->
+                            <div class="card p-5" data-aos="fade-up" data-aos-delay="1200">
+                                <h4 class="text-xl font-semibold text-heading-color">10th Grade</h4>
+                                <p class="text-primary-color text-sm">Little Flower School - India | Mar 2020 - Mar 2021</p>
+                                <p class="text-sm mt-1 text-text-color">Grade: C.G.P.A-9.0</p>
+                                <p class="text-sm mt-2 text-text-color">Completed secondary education with high academic achievement.</p>
+                            </div>
+                            <!-- Experience: AI/ML Student Training Program -->
+                            <div class="card p-5" data-aos="fade-up" data-aos-delay="1400">
+                                <h4 class="text-xl font-semibold text-heading-color">Artificial and Machine Learning Student Training Program</h4>
+                                <p class="text-primary-color text-sm">iHub-Data, IIIT Hyderabad | Nov 2024 - May 2025</p>
+                                <p class="text-sm mt-2 text-text-color">Gained practical experience in AI and Machine Learning concepts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24 bg-white transition-colors duration-300">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title text-gradient">My Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Skill Card 1: Programming & AI/ML -->
+                    <div class="card p-6 flex flex-col items-center text-center space-y-4" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fas fa-laptop-code text-5xl text-primary-color"></i>
+                        <h3 class="text-2xl font-semibold text-heading-color">Programming & AI/ML</h3>
+                        <p class="text-text-color">C (Programming Language), DSA using C, Python, Machine Learning, Pandas, Numpy, Statistical Analysis And Computing Using Python, AI skill challenge (Public badge profile), AIML Professional, Artificial Intelligence and Machine Learning Course</p>
+                    </div>
+                    <!-- Skill Card 2: Web Development -->
+                    <div class="card p-6 flex flex-col items-center text-center space-y-4" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fas fa-code text-5xl text-primary-color"></i>
+                        <h3 class="text-2xl font-semibold text-heading-color">Web Development</h3>
+                        <p class="text-text-color">Full-Stack Developer, HTML, CSS, JavaScript, Bootstrap (Framework), WordPress</p>
+                    </div>
+                    <!-- Skill Card 3: UI/UX & Design -->
+                    <div class="card p-6 flex flex-col items-center text-center space-y-4" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="fas fa-paint-brush text-5xl text-primary-color"></i>
+                        <h3 class="text-2xl font-semibold text-heading-color">UI/UX & Design</h3>
+                        <p class="text-text-color">Figma UI Designer, AutoCAD</p>
+                    </div>
+                    <!-- Skill Card 4: Networking & Cloud -->
+                    <div class="card p-6 flex flex-col items-center text-center space-y-4" data-aos="zoom-in" data-aos-delay="400">
+                        <i class="fas fa-network-wired text-5xl text-primary-color"></i>
+                        <h3 class="text-2xl font-semibold text-heading-color">Networking & Cloud</h3>
+                        <p class="text-text-color">CCNA, CCNA 200-301 Networking Fundamentals, Cisco Packet Tracer (macOS), Cloud Product Management, Introduction to Cybersecurity, Networking Basics</p>
+                    </div>
+                    <!-- Skill Card 5: Database & Tools -->
+                    <div class="card p-6 flex flex-col items-center text-center space-y-4" data-aos="zoom-in" data-aos-delay="500">
+                        <i class="fas fa-database text-5xl text-primary-color"></i>
+                        <h3 class="text-2xl font-semibold text-heading-color">Database & Tools</h3>
+                        <p class="text-text-color">Database Management System (DBMS), Microsoft Office</p>
+                    </div>
+                    <!-- Skill Card 6: Soft Skills -->
+                    <div class="card p-6 flex flex-col items-center text-center space-y-4" data-aos="zoom-in" data-aos-delay="600">
+                        <i class="fas fa-users text-5xl text-primary-color"></i>
+                        <h3 class="text-2xl font-semibold text-heading-color">Soft Skills</h3>
+                        <p class="text-text-color">Public Speaking, Leadership, Teamwork, Volunteer Management, State's Best Speaker</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section (without proficiency bars) -->
+        <section id="tech-stack" class="py-16 md:py-24 bg-gray-50 transition-colors duration-300">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title text-gradient">My Tech Stack</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center">
+                    <!-- Tech Icon 1: HTML -->
+                    <div class="flex flex-col items-center space-y-2 group w-full px-2" data-aos="zoom-in" data-aos-delay="50">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="w-16 h-16 transition-transform group-hover:scale-110">
+                        <span class="text-text-color text-sm font-medium">HTML5</span>
+                    </div>
+                    <!-- Tech Icon 2: CSS -->
+                    <div class="flex flex-col items-center space-y-2 group w-full px-2" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="w-16 h-16 transition-transform group-hover:scale-110">
+                        <span class="text-text-color text-sm font-medium">CSS3</span>
+                    </div>
+                    <!-- Tech Icon 3: JavaScript -->
+                    <div class="flex flex-col items-center space-y-2 group w-full px-2" data-aos="zoom-in" data-aos-delay="150">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-16 h-16 transition-transform group-hover:scale-110">
+                        <span class="text-text-color text-sm font-medium">JavaScript</span>
+                    </div>
+                    <!-- Tech Icon 4: Python -->
+                    <div class="flex flex-col items-center space-y-2 group w-full px-2" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-16 h-16 transition-transform group-hover:scale-110">
+                        <span class="text-text-color text-sm font-medium">Python</span>
+                    </div>
+                    <!-- Tech Icon 5: C -->
+                    <div class="flex flex-col items-center space-y-2 group w-full px-2" data-aos="zoom-in" data-aos-delay="250">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="w-16 h-16 transition-transform group-hover:scale-110">
+                        <span class="text-text-color text-sm font-medium">C</span>
+                    </div>
+                    <!-- Tech Icon 6: Bootstrap -->
+                    <div class="flex flex-col items-center space-y-2 group w-full px-2" data-aos="zoom-in" data-aos-delay="350">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="w-16 h-16 transition-transform group-hover:scale-110">
+                        <span class="text-text-color text-sm font-medium">Bootstrap</span>
+                    </div>
+                    <!-- Tech Icon 7: Figma -->
+                    <div class="flex flex-col items-center space-y-2 group w-full px-2" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="w-16 h-16 transition-transform group-hover:scale-110">
+                        <span class="text-text-color text-sm font-medium">Figma</span>
+                    </div>
+                    <!-- Tech Icon 8: WordPress -->
+                    <div class="flex flex-col items-center space-y-2 group w-full px-2" data-aos="zoom-in" data-aos-delay="450">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" class="w-16 h-16 transition-transform group-hover:scale-110">
+                        <span class="text-text-color text-sm font-medium">WordPress</span>
+                    </div>
+                    <!-- Tech Icon 9: MySQL (for DBMS) -->
+                    <div class="flex flex-col items-center space-y-2 group w-full px-2" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="w-16 h-16 transition-transform group-hover:scale-110">
+                        <span class="text-text-color text-sm font-medium">MySQL (DBMS)</span>
+                    </div>
+                    <!-- Tech Icon 10: NumPy -->
+                    <div class="flex flex-col items-center space-y-2 group w-full px-2" data-aos="zoom-in" data-aos-delay="550">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="w-16 h-16 transition-transform group-hover:scale-110">
+                        <span class="text-text-color text-sm font-medium">NumPy</span>
+                    </div>
+                    <!-- Tech Icon 11: Pandas -->
+                    <div class="flex flex-col items-center space-y-2 group w-full px-2" data-aos="zoom-in" data-aos-delay="600">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="w-16 h-16 transition-transform group-hover:scale-110">
+                        <span class="text-text-color text-sm font-medium">Pandas</span>
+                    </div>
+                    <!-- Tech Icon 12: Google Cloud (Placeholder for Cloud Product Management) -->
+                    <div class="flex flex-col items-center space-y-2 group w-full px-2" data-aos="zoom-in" data-aos-delay="650">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" class="w-16 h-16 transition-transform group-hover:scale-110">
+                        <span class="text-text-color text-sm font-medium">Google Cloud</span>
+                    </div>
+                    <!-- Tech Icon 13: Cisco (Placeholder for CCNA/Networking) -->
+                    <div class="flex flex-col items-center space-y-2 group w-full px-2" data-aos="zoom-in" data-aos-delay="700">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cisco/cisco-original.svg" alt="Cisco" class="w-16 h-16 transition-transform group-hover:scale-110">
+                        <span class="text-text-color text-sm font-medium">Cisco Networking</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 md:py-24 bg-white transition-colors duration-300">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title text-gradient">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card: 2D CAR RACING GAME -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://placehold.co/400x250/F48542/FFFFFF?text=2D+Car+Racing+Game" alt="2D Car Racing Game Project" class="rounded-lg mb-4 w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">2D Car Racing Game</h3>
+                        <p class="text-text-color text-sm mb-4 project-description">A fast-paced driving game viewed from a top-down or side perspective. Players control a car to avoid obstacles, overtake opponents, and score points as they race on a 2D track. It's built using HTML, CSS, and JavaScript, often featuring animations, sounds, and responsive controls.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">CSS</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">Game Development</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/mdbasheer-tech/2d-CAR-RACE/blob/main/2dcarrace.html" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View 2D Car Racing Game Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/mdbasheer-tech/2d-CAR-RACE" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View 2D Car Racing Game Code"><i class="fab fa-github"></i> Code</a>
+                            <button class="text-primary-color hover:text-primary-hover transition-colors duration-200 ml-auto" onclick="enhanceDescription(this)">Enhance Description ✨</button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: A PROFESSIONAL PORTFOLIO WEBSITE -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://placehold.co/400x250/34A853/FFFFFF?text=Professional+Portfolio" alt="Professional Portfolio Website Project" class="rounded-lg mb-4 w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">A Professional Portfolio Website</h3>
+                        <p class="text-text-color text-sm mb-4 project-description">A meticulously designed digital portfolio that highlights professional accomplishments, skills, and creative works. This website serves as a compelling personal brand showcase, blending sleek aesthetics with intuitive navigation to captivate potential clients or employers. It seamlessly integrates multimedia elements and contact functionality to facilitate meaningful engagement and networking.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">CSS</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">Responsive Design</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/mdbasheer-tech/Portfolio-weB/blob/main/PORTFOLIO.html" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View Portfolio Website Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/mdbasheer-tech/Portfolio-weB" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View Portfolio Website Code"><i class="fab fa-github"></i> Code</a>
+                            <button class="text-primary-color hover:text-primary-hover transition-colors duration-200 ml-auto" onclick="enhanceDescription(this)">Enhance Description ✨</button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: A RESTAURANT CUISINE WEBSITE -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://placehold.co/400x250/FBBC05/FFFFFF?text=Restaurant+Website" alt="Restaurant Cuisine Website Project" class="rounded-lg mb-4 w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">A Restaurant Cuisine Website</h3>
+                        <p class="text-text-color text-sm mb-4 project-description">An elegant and visually captivating online presence crafted to showcase culinary offerings and dining experiences. This website features dynamic menus, reservation systems, and engaging imagery, designed to entice patrons and elevate the restaurant’s brand identity. Its responsive design guarantees flawless accessibility across devices, enhancing customer interaction and satisfaction.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">CSS</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">Responsive Design</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View Restaurant Website Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/mdbasheer-tech/restaurant-website" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View Restaurant Website Code"><i class="fab fa-github"></i> Code</a>
+                            <button class="text-primary-color hover:text-primary-hover transition-colors duration-200 ml-auto" onclick="enhanceDescription(this)">Enhance Description ✨</button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: A SCHOOL GRADE MANAGEMENT WEBSITE -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="400">
+                        <img src="https://placehold.co/400x250/EA4335/FFFFFF?text=School+Grades" alt="School Grade Management Website Project" class="rounded-lg mb-4 w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">A School Grade Management Website</h3>
+                        <p class="text-text-color text-sm mb-4 project-description">A sophisticated and intuitive digital platform designed to streamline academic performance tracking. This website facilitates seamless management of student grades, attendance, and progress reports, empowering educators and administrators with efficient tools to monitor and enhance student outcomes. Its user-centric interface ensures ease of navigation while maintaining robust data accuracy and security.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">CSS</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">Database Management</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View School Grade Management Website Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/mdbasheer-tech/school-grade-management" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View School Grade Management Website Code"><i class="fab fa-github"></i> Code</a>
+                            <button class="text-primary-color hover:text-primary-hover transition-colors duration-200 ml-auto" onclick="enhanceDescription(this)">Enhance Description ✨</button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: AI CHATBOT(chatbuddy😃) -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="500">
+                        <img src="https://placehold.co/400x250/4285F4/FFFFFF?text=AI+Chatbot" alt="AI Chatbot Project" class="rounded-lg mb-4 w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">AI Chatbot (Chatbuddy😃)</h3>
+                        <p class="text-text-color text-sm mb-4 project-description">An AI chatbot is a software program that simulates human conversation using natural language processing. It can answer questions, assist users, and perform tasks by understanding and responding to text or voice inputs. Chatbots are commonly used in websites, apps, and customer service systems.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">AI</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">Machine Learning</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">NLP</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/mdbasheer-tech/CHATBOT/blob/main/AICHATBOT.HTML" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View AI Chatbot Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/mdbasheer-tech/CHATBOT" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View AI Chatbot Code"><i class="fab fa-github"></i> Code</a>
+                            <button class="text-primary-color hover:text-primary-hover transition-colors duration-200 ml-auto" onclick="enhanceDescription(this)">Enhance Description ✨</button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: AN AUTHENTIC TEXT TO SPEECH AI CONVERTER -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="600">
+                        <img src="https://placehold.co/400x250/34A853/FFFFFF?text=Text+to+Speech+AI" alt="Text to Speech AI Converter Project" class="rounded-lg mb-4 w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">An Authentic Text to Speech AI Converter</h3>
+                        <p class="text-text-color text-sm mb-4 project-description">This Text-to-Speech (TTS) converter is a user-friendly tool designed to transform written text into natural-sounding speech. It leverages advanced speech synthesis technology to provide clear, expressive, and accurate voice output. Ideal for accessibility, productivity, and creative applications, this tool supports various languages and voice styles. Whether you're reading documents aloud, creating voiceovers, or assisting visually impaired users, the TTS converter delivers a smooth and engaging audio experience with customizable pitch, speed, and tone.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">AI</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">Web Audio API</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/mdbasheer-tech/TEXT-RO-SPEECH-CONVERTER/blob/main/texttospeech.html" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View Text to Speech Converter Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/mdbasheer-tech/TEXT-RO-SPEECH-CONVERTER" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View Text to Speech Converter Code"><i class="fab fa-github"></i> Code</a>
+                            <button class="text-primary-color hover:text-primary-hover transition-colors duration-200 ml-auto" onclick="enhanceDescription(this)">Enhance Description ✨</button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: AUTO SAVING GOAL MANAGER WITH AI -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="700">
+                        <img src="https://placehold.co/400x250/FBBC05/FFFFFF?text=Auto+Saving+AI" alt="Auto Saving Goal Manager with AI Project" class="rounded-lg mb-4 w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Auto Saving Goal Manager with AI</h3>
+                        <p class="text-text-color text-sm mb-4 project-description">An intelligent financial assistant that helps users set, track, and automatically manage their savings goals. It analyzes income and spending habits using AI to suggest optimal saving strategies, sends reminders, and adjusts goals in real-time to ensure consistent progress.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">AI</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">Financial Tech</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View Auto Saving Goal Manager Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/mdbasheer-tech/SAVEMATE" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View Auto Saving Goal Manager Code"><i class="fab fa-github"></i> Code</a>
+                            <button class="text-primary-color hover:text-primary-hover transition-colors duration-200 ml-auto" onclick="enhanceDescription(this)">Enhance Description ✨</button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: DIPLOMATIC SITUATION GAME -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="800">
+                        <img src="https://placehold.co/400x250/EA4335/FFFFFF?text=Diplomatic+Game" alt="Diplomatic Situation Game Project" class="rounded-lg mb-4 w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Diplomatic Situation Game</h3>
+                        <p class="text-text-color text-sm mb-4 project-description">A strategic role-playing or simulation-based game where players represent different nations, leaders, or factions and navigate complex political scenarios. The main focus is on negotiation, alliance-building, persuasion, and tactical decision-making rather than direct conflict or combat. Each round or stage presents a unique geopolitical challenge (e.g., trade disputes, military tension, climate crisis, refugee influx).</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">Game Development</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">CSS</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/mdbasheer-tech/SITUATION-GAME/blob/main/BGAME.HTML" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View Diplomatic Situation Game Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/mdbasheer-tech/SITUATION-GAME" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View Diplomatic Situation Game Code"><i class="fab fa-github"></i> Code</a>
+                            <button class="text-primary-color hover:text-primary-hover transition-colors duration-200 ml-auto" onclick="enhanceDescription(this)">Enhance Description ✨</button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: EVENT MANAGEMENT WEBSITE -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="900">
+                        <img src="https://placehold.co/400x250/4285F4/FFFFFF?text=Event+Management" alt="Event Management Website Project" class="rounded-lg mb-4 w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Event Management Website</h3>
+                        <p class="text-text-color text-sm mb-4 project-description">Crafted for Elegance, Engineered for Impact. This all-in-one HTML/CSS site is a powerfully responsive event management platform—built with precision, style, and motion. From a fluid navbar to immersive hero visuals, every section is tuned like a Porsche: clean, fast, and flawlessly aligned. It’s not just a website. It’s your digital stage—where events come alive.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">CSS</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">Responsive Design</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/mdbasheer-tech/EVENT-MANAGEMENT-WEBSITE/blob/main/eventmanagement.html" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View Event Management Website Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/mdbasheer-tech/EVENT-MANAGEMENT-WEBSITE" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View Event Management Website Code"><i class="fab fa-github"></i> Code</a>
+                            <button class="text-primary-color hover:text-primary-hover transition-colors duration-200 ml-auto" onclick="enhanceDescription(this)">Enhance Description ✨</button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: FRUIT NINJA GAME -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="1000">
+                        <img src="https://placehold.co/400x250/34A853/FFFFFF?text=Fruit+Ninja" alt="Fruit Ninja Game Project" class="w-full h-auto object-cover rounded-lg mb-4">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Fruit Ninja Game</h3>
+                        <p class="text-text-color text-sm mb-4 project-description">"Slice, dice, and unleash your inner ninja! Step into the dojo and prove your skills in Fruit Ninja — the ultimate arcade slasher. Swipe your way through flying fruit, dodge deadly bombs, and chase high scores in a juicy explosion of color and reflexes. Are you fast enough to become the master of fruit-slicing fury?"</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">Game Development</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">CSS</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/mdbasheer-tech/FRUITNINJAGAME2/blob/main/fruitninjagame.html" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View Fruit Ninja Game Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/mdbasheer-tech/FRUITNINJAGAME2" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View Fruit Ninja Game Code"><i class="fab fa-github"></i> Code</a>
+                            <button class="text-primary-color hover:text-primary-hover transition-colors duration-200 ml-auto" onclick="enhanceDescription(this)">Enhance Description ✨</button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: YOUTUBE CLONE -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="1100">
+                        <img src="https://placehold.co/400x250/FBBC05/FFFFFF?text=YouTube+Clone" alt="YouTube Clone Project" class="w-full h-auto object-cover rounded-lg mb-4">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">YouTube Clone (Frontend Only)</h3>
+                        <p class="text-text-color text-sm mb-4 project-description">A web interface that replicates the look and feel of YouTube using HTML, CSS, and JavaScript without any backend functionality. It includes: A responsive homepage layout with a navbar, search bar, and video thumbnails, a video watch page with a player UI, title, views, likes/dislikes, and description, sidebar or menu with navigation options (Home, Subscriptions, Library, etc.), and basic interactivity using JavaScript like clicking thumbnails to navigate between pages (simulated). This clone focuses purely on UI/UX design and is great for frontend development practice.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">CSS</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            <span class="bg-primary-color/10 text-primary-color text-xs font-semibold px-2.5 py-0.5 rounded-full">UI/UX</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View YouTube Clone Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/mdbasheer-tech/YOUTUBE-CLONE" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover transition-colors duration-200" aria-label="View YouTube Clone Code"><i class="fab fa-github"></i> Code</a>
+                            <button class="text-primary-color hover:text-primary-hover transition-colors duration-200 ml-auto" onclick="enhanceDescription(this)">Enhance Description ✨</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-16 md:py-24 bg-gray-50 transition-colors duration-300">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title text-gradient">Certifications</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Certification Card 1: AI Skill Challenge -->
+                    <div class="card certification-card" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="https://placehold.co/300x200/4285F4/FFFFFF?text=AI+Skill+Challenge" alt="AI Skill Challenge Certification" class="w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">AI Skill Challenge (Public Badge Profile)</h3>
+                        <p class="text-text-color text-sm">Issued by Microsoft | Oct 2024</p>
+                        <a href="https://g.dev/MohammedBasheeruddin" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover mt-3 transition-colors duration-200">View Credential <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                    <!-- Certification Card 2: Introduction to Cybersecurity -->
+                    <div class="card certification-card" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="https://placehold.co/300x200/34A853/FFFFFF?text=Cybersecurity" alt="Introduction to Cybersecurity Certification" class="w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Introduction to Cybersecurity</h3>
+                        <p class="text-text-color text-sm">Issued by Cisco Networking Academy | Oct 2024</p>
+                        <p class="text-text-color text-xs mt-1">An introductory course about cybersecurity.</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover mt-3 transition-colors duration-200">View Credential <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                    <!-- Certification Card 3: CCNA 200-301 Networking Fundamentals -->
+                    <div class="card certification-card" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="https://placehold.co/300x200/FBBC05/FFFFFF?text=CCNA" alt="CCNA Certification" class="w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">CCNA 200-301 Networking Fundamentals</h3>
+                        <p class="text-text-color text-sm">Issued by Simplilearn | Sep 2024</p>
+                        <p class="text-text-color text-xs mt-1">Completed my certification in CCNA which taught me basics of how network world communicates.</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover mt-3 transition-colors duration-200">View Credential <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                    <!-- Certification Card 4: Cloud Product Management -->
+                    <div class="card certification-card" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="https://placehold.co/300x200/EA4335/FFFFFF?text=Cloud+PM" alt="Cloud Product Management Certification" class="w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Cloud Product Management</h3>
+                        <p class="text-text-color text-sm">Issued by Google</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover mt-3 transition-colors duration-200">View Credential <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                    <!-- Certification Card 5: Business Hackathon Certificate -->
+                    <div class="card certification-card" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="https://placehold.co/300x200/F48542/FFFFFF?text=BizHack" alt="Business Hackathon Certificate" class="w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Business Hackathon Certificate</h3>
+                        <p class="text-text-color text-sm">Issued by Markitome | May 2025</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover mt-3 transition-colors duration-200">View Credential <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                    <!-- Certification Card 6: Global Marketing and Trading Analyst -->
+                    <div class="card certification-card" data-aos="zoom-in" data-aos-delay="600">
+                        <img src="https://placehold.co/300x200/34A853/FFFFFF?text=Global+Marketing" alt="Global Marketing and Trading Analyst Certificate" class="w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Global Marketing and Trading Analyst</h3>
+                        <p class="text-text-color text-sm">Issued by Bank of America | May 2025</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover mt-3 transition-colors duration-200">View Credential <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                    <!-- Certification Card 7: HSBC Commercial Banking Job Simulation -->
+                    <div class="card certification-card" data-aos="zoom-in" data-aos-delay="700">
+                        <img src="https://placehold.co/300x200/FBBC05/FFFFFF?text=HSBC+Banking" alt="HSBC Commercial Banking Job Simulation Certificate" class="w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">HSBC Commercial Banking Job Simulation</h3>
+                        <p class="text-text-color text-sm">Issued by HSBC | May 2025</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover mt-3 transition-colors duration-200">View Credential <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                    <!-- Certification Card 8: AIML Professional -->
+                    <div class="card certification-card" data-aos="zoom-in" data-aos-delay="800">
+                        <img src="https://placehold.co/300x200/EA4335/FFFFFF?text=AIML+Pro" alt="AIML Professional Certificate" class="w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">AIML Professional</h3>
+                        <p class="text-text-color text-sm">Issued by iHub-Data, IIIT Hyderabad | Apr 2025</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover mt-3 transition-colors duration-200">View Credential <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                    <!-- Certification Card 9: Networking Basics -->
+                    <div class="card certification-card" data-aos="zoom-in" data-aos-delay="900">
+                        <img src="https://placehold.co/300x200/4285F4/FFFFFF?text=Networking+Basics" alt="Networking Basics Certificate" class="w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Networking Basics</h3>
+                        <p class="text-text-color text-sm">Issued by Cisco | Sep 2024</p>
+                        <p class="text-text-color text-xs mt-1">Completed my course on networking basics.</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover mt-3 transition-colors duration-200">View Credential <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                    <!-- Certification Card 10: State's Best Speaker -->
+                    <div class="card certification-card" data-aos="zoom-in" data-aos-delay="1000">
+                        <img src="https://placehold.co/300x200/34A853/FFFFFF?text=Best+Speaker" alt="State's Best Speaker Certificate" class="w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">State's Best Speaker (4th position)</h3>
+                        <p class="text-text-color text-sm">Issued by Student Tribe | Mar 2024</p>
+                        <p class="text-text-color text-xs mt-1">Glad to announce that I've obtained 4th rank in state level speaking competition.</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover mt-3 transition-colors duration-200">View Credential <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                    <!-- Certification Card 11: Full Stack Web Developer -->
+                    <div class="card certification-card" data-aos="zoom-in" data-aos-delay="1100">
+                        <img src="https://placehold.co/300x200/FBBC05/FFFFFF?text=Full+Stack+Web+Developer" alt="Full Stack Web Developer Certificate" class="w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Full Stack Web Developer</h3>
+                        <p class="text-text-color text-sm">Issued by The Siasat Daily | Oct 2023</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover mt-3 transition-colors duration-200">View Credential <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                    <!-- Certification Card 12: Programming in C -->
+                    <div class="card certification-card" data-aos="zoom-in" data-aos-delay="1200">
+                        <img src="https://placehold.co/300x200/EA4335/FFFFFF?text=Programming+in+C" alt="Programming in C Certificate" class="w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Programming in C</h3>
+                        <p class="text-text-color text-sm">Issued by SHARP n SMART | Jun 2023</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover mt-3 transition-colors duration-200">View Credential <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                    <!-- Certification Card 13: HSBC Global Marketing -->
+                    <div class="card certification-card" data-aos="zoom-in" data-aos-delay="1300">
+                        <img src="https://placehold.co/300x200/4285F4/FFFFFF?text=HSBC+Marketing" alt="HSBC Global Marketing Certificate" class="w-full h-auto object-cover">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">HSBC Global Marketing</h3>
+                        <p class="text-text-color text-sm">Issued by HSBC</p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-primary-color hover:text-primary-hover mt-3 transition-colors duration-200">View Credential <i class="fas fa-external-link-alt ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section (Placeholder) -->
+        <section id="blog" class="py-16 md:py-24 bg-white transition-colors duration-300">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title text-gradient">My Blog</h2>
+                <div class="text-center text-lg text-text-color max-w-2xl mx-auto">
+                    <p class="mb-4">I occasionally write about my journey in tech, interesting projects, and insights on front-end development and AI/ML.</p>
+                    <p class="mb-6">Stay tuned for new articles!</p>
+                    <a href="#" class="btn-primary inline-flex items-center space-x-2">
+                        <i class="fas fa-book-open"></i>
+                        <span>Read My Articles</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteering Section -->
+        <section id="volunteering" class="py-16 md:py-24 bg-gray-50 transition-colors duration-300">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title text-gradient">Volunteering & Community</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Volunteering Card 1: Student Ambassador -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Student Ambassador & Community Member</h3>
+                        <p class="text-primary-color text-sm mb-2">Student Tribe (formerly stuMagz) | Dec 2024 - Present</p>
+                        <p class="text-text-color text-sm">Actively engage with student communities, organize events, and promote educational initiatives. This role has honed my leadership and communication skills.</p>
+                    </div>
+                    <!-- Volunteering Card 2: MECS Orators Club -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Club Member</h3>
+                        <p class="text-primary-color text-sm mb-2">MECS Orators Club | Oct 2024 - Present</p>
+                        <p class="text-text-color text-sm">Participate in and organize public speaking events, enhancing my ability to articulate complex ideas clearly and confidently. Awarded "State's Best Speaker."</p>
+                    </div>
+                    <!-- Volunteering Card 3: Volunteer - Idealabs FutureTech Ventures -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Volunteer</h3>
+                        <p class="text-primary-color text-sm mb-2">Idealabs FutureTech Ventures | Science and Technology</p>
+                        <p class="text-text-color text-sm">I've got an amazing opportunity to give my potential in the role of volunteering for a two-day event conducted at T-HUB. It was an amazing opportunity for me to explore many things about new revolutionary ideas been touched in with "AI" etc.</p>
+                    </div>
+                    <!-- Volunteering Card 4: Volunteer - National Service Scheme -->
+                    <div class="card" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="text-xl font-semibold text-heading-color mb-2">Volunteer</h3>
+                        <p class="text-primary-color text-sm mb-2">National Service Scheme | Nov 2024 - Present · 9 mos</p>
+                        <p class="text-text-color text-sm">Involved in various social services and community development programs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Info Section (Replaced old Contact Form) -->
+        <section id="contact-info" class="py-16 md:py-24 bg-white transition-colors duration-300">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title text-gradient">Get In Touch</h2>
+                <p class="text-center text-lg text-text-color mb-8 max-w-2xl mx-auto">
+                    Have a project in mind, a question, or just want to say hello? Feel free to reach out directly via email or phone, or connect with me on social media.
+                </p>
+                <div class="flex flex-col items-center space-y-6">
+                    <div class="flex items-center space-x-3 text-lg text-text-color">
+                        <i class="fas fa-envelope text-primary-color text-2xl"></i>
+                        <a href="mailto:mdbasheercse070@gmail.com" class="hover:text-primary-color transition-colors duration-200">mdbasheercse070@gmail.com</a>
+                    </div>
+                    <div class="flex items-center space-x-3 text-lg text-text-color">
+                        <i class="fas fa-phone text-primary-color text-2xl"></i>
+                        <a href="tel:+919618295741" class="hover:text-primary-color transition-colors duration-200">+91 9618295741</a>
+                    </div>
+                    <div class="flex space-x-6 text-3xl">
+                        <a href="https://www.linkedin.com/in/mohammed-basheeruddin-198631287/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-700 transition-colors duration-200" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900 transition-colors duration-200" aria-label="GitHub Profile">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <!-- Removed Twitter link -->
+                        <a href="https://instagram.com/basheer._.09" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-pink-600 transition-colors duration-200" aria-label="Instagram Profile">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-heading-color text-white py-8">
+        <div class="container text-center">
+            <p class="mb-4">&copy; 2025 Mohammed Basheeruddin. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 text-2xl">
+                <a href="https://www.linkedin.com/in/mohammed-basheeruddin-198631287/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" class="hover:text-primary-color transition-colors duration-200" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400 transition-colors duration-200" aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:mdbasheercse070@gmail.com" class="hover:text-primary-color transition-colors duration-200" aria-label="Email Me">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <!-- Removed Twitter link from footer -->
+                <a href="https://instagram.com/basheer._.09" target="_blank" rel="noopener noreferrer" class="hover:text-pink-600 transition-colors duration-200" aria-label="Instagram Profile">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Generated Description -->
+    <div id="descriptionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h3 class="text-2xl font-semibold text-heading-color mb-4">Enhanced Description</h3>
+            <p id="generatedDescription" class="text-text-color text-base"></p>
+            <button class="btn-primary mt-4" onclick="copyToClipboard()">Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Menu, AOS, and Gemini API Integration -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true, // Whether animation should happen only once - while scrolling down
+            mirror: false, // Whether elements should animate out while scrolling past them
+        });
+
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                if (!document.getElementById('mobile-menu').classList.contains('hidden')) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+
+        // Gemini API Integration for Project Description Enhancement
+        async function enhanceDescription(buttonElement) {
+            const card = buttonElement.closest('.card');
+            const projectTitle = card.querySelector('h3').textContent;
+            const currentDescription = card.querySelector('.project-description').textContent;
+
+            // Show loading indicator
+            buttonElement.textContent = 'Generating...';
+            buttonElement.disabled = true;
+
+            const prompt = `Rewrite and expand the following project description to make it more engaging and professional. Focus on highlighting key features, technologies used, and the impact or purpose of the project.
+
+            Project Title: ${projectTitle}
+            Current Description: ${currentDescription}
+
+            Please provide a new, enhanced description (around 100-150 words).`;
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+            const payload = { contents: chatHistory };
+            const apiKey = ""; // Leave as empty string for Canvas environment
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                let generatedText = "Could not generate description.";
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    generatedText = result.candidates[0].content.parts[0].text;
+                } else {
+                    console.error("Unexpected API response structure:", result);
+                }
+
+                // Display generated text in modal
+                document.getElementById('generatedDescription').textContent = generatedText;
+                document.getElementById('descriptionModal').style.display = 'flex';
+
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                document.getElementById('generatedDescription').textContent = "Failed to generate description. Please try again later.";
+                document.getElementById('descriptionModal').style.display = 'flex';
+            } finally {
+                // Reset button state
+                buttonElement.textContent = 'Enhance Description ✨';
+                buttonElement.disabled = false;
+            }
+        }
+
+        // Close modal function
+        function closeModal() {
+            document.getElementById('descriptionModal').style.display = 'none';
+        }
+
+        // Copy to clipboard function
+        function copyToClipboard() {
+            const textToCopy = document.getElementById('generatedDescription').textContent;
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                alert('Description copied to clipboard!'); // Using alert for simplicity, consider custom modal for better UX
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+                alert('Failed to copy description.');
+            }
+            document.body.removeChild(textarea);
+        }
+    </script>
+</body>
+</html>
